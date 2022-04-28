@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2020",  // 转化成的目标语言
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "./dist/",  // 打包到的目录
+    "lib": ["ES6", "DOM", "esnext"],
+    "allowJs": true,
+    "strict": false
+  },
+  "include": ["src/**/*.ts"],  // 要打包的文件
+  "exclude": ["node_modules", "**/__tests__/*"]
+}
