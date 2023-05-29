@@ -7,7 +7,8 @@
     "outDir": "./dist/",  // 打包到的目录
     "lib": ["ES6", "DOM", "esnext"],
     "allowJs": true,
-    "strict": false
+    "strict": false,
+    "esModuleInterop": true
   },
   "include": ["src/**/*.ts"],  // 要打包的文件
   "exclude": ["node_modules", "**/__tests__/*"]

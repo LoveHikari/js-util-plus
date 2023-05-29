@@ -35,7 +35,7 @@ export const ArrayUtil = {
      */
     union:  (a: any[], b: any[]): any[] => {
         return a.concat(b.filter(v => !a.includes(v)))
-    },
+    }
 }
 
 
