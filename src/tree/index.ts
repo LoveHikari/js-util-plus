@@ -86,6 +86,31 @@ const TreeUtil = {
       path.pop();
     }
     return [];
+  },
+  /**
+   * 获取该树形结构的最后一级的所有节点
+   * @param tree
+   * @return {Array} list
+   */
+  getAllNodesAtLastLevel: (tree: any[]): any[] => {
+    const nodes = [];
+    function traverse(node, level) {
+      if (!node) {
+        return;
+      }
+
+      if (!node.children || node.children.length === 0) {
+        nodes.push(node);
+        return;
+      }
+      node.children.forEach(child => {
+        traverse(child, level + 1);
+      });
+    }
+    const temp = { children: tree}
+    traverse(temp, 0);
+
+    return nodes;
   }
 }
 export default  TreeUtil;

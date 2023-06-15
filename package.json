@@ -1,6 +1,6 @@
 {
   "name": "hikari-js",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "js/ts常用工具包",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
     "postversion": "git push && git push --tags"
   },
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "repository": {
     "type": "git",
