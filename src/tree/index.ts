@@ -1,4 +1,4 @@
-const TreeUtil = {
+export const TreeUtil = {
   /**
    * 广度优先遍历
    * @param tree 树结构
@@ -113,4 +113,3 @@ const TreeUtil = {
     return nodes;
   }
 }
-export default  TreeUtil;

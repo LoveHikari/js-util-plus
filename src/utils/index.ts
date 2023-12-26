@@ -1,4 +1,4 @@
-export default class Utils {
+export const Utils = {
   /**
    * base64转Blob
    * 调用方式 const blob = base64ToBlob(b64Data, contentType);
@@ -7,7 +7,7 @@ export default class Utils {
    * @param sliceSize {number} 切片大小
    * @return {Blob} blob对象
    */
-  static base64ToBlob = (b64Data: string, contentType: string = '', sliceSize: number = 512): Blob => {
+  base64ToBlob: (b64Data: string, contentType: string = '', sliceSize: number = 512): Blob => {
     if (b64Data.indexOf(';base64,') > -1) {
       const parts = b64Data.split(';base64,');
       b64Data = parts[1];
@@ -31,14 +31,14 @@ export default class Utils {
 
     const blob = new Blob(byteArrays, { type: contentType });
     return blob;
-  };
+  },
   /**
    * base64转Blob异步
    * @param {string} b64Data base64正文
    * @param {string} contentType 正文类型类型
    * @return {Promise<Blob>}
    */
-  static b64toBlob = (b64Data, contentType = 'application/octet-stream'): Promise<Blob> => {
+  b64toBlob: async (b64Data: string, contentType: string = 'application/octet-stream'): Promise<Blob> => {
     let base64 = '';
     if (b64Data.indexOf(';base64,') > -1) {
       base64 = b64Data;
@@ -46,6 +46,7 @@ export default class Utils {
       base64 = `data:${contentType};base64,${b64Data}`;
     }
 
-    return fetch(base64).then(res => res.blob());
-  };
+    const res = await fetch(base64);
+    return await res.blob();
+  }
 }
